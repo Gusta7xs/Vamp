@@ -7149,3 +7149,20 @@ local function enableEverything(statusLabel)
     end)
 end
 
+pcall(function()
+    local old = getgenv()._usStandaloneUnlockGui
+    if old then old:Destroy() end
+end)
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "UnlockSuiteUnlockAllEmotes"
+gui.ResetOnSpawn = false
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local parent = LocalPlayer:WaitForChild("PlayerGui")
+pcall(function()
+    if type(gethui) == "function" then parent = gethui() end
+end)
+gui.Parent = parent
+getgenv()._usStandaloneUnlockGui = gui
+
