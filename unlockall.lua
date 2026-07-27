@@ -7166,6 +7166,19 @@ end)
 gui.Parent = parent
 getgenv()._usStandaloneUnlockGui = gui
 
+local button = Instance.new("TextButton")
+button.Name = "Enable"
+button.AnchorPoint = Vector2.new(0.5, 0.5)
+button.Position = UDim2.fromScale(0.5, 0.82)
+button.Size = UDim2.fromOffset(250, 54)
+button.BackgroundColor3 = Color3.fromRGB(18, 20, 28)
+button.BorderSizePixel = 0
+button.AutoButtonColor = true
+button.Font = Enum.Font.GothamBold
+button.Text = "UNLOCK ALL + EMOTES"
+button.TextColor3 = Color3.fromRGB(245, 245, 255)
+button.TextSize = 15
+button.Parent = gui
 
 local corner = Instance.new("UICorner")
 corner.CornerRadius = UDim.new(0, 12)
