@@ -7166,3 +7166,35 @@ end)
 gui.Parent = parent
 getgenv()._usStandaloneUnlockGui = gui
 
+
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 12)
+corner.Parent = button
+
+local stroke = Instance.new("UIStroke")
+stroke.Color = Color3.fromRGB(121, 82, 255)
+stroke.Thickness = 2
+stroke.Parent = button
+
+local status = Instance.new("TextLabel")
+status.AnchorPoint = Vector2.new(0.5, 0)
+status.Position = UDim2.new(0.5, 0, 1, 5)
+status.Size = UDim2.fromOffset(250, 20)
+status.BackgroundTransparency = 1
+status.Font = Enum.Font.GothamMedium
+status.Text = "SWORDS â€¢ EXPLOSIONS â€¢ EMOTES"
+status.TextColor3 = Color3.fromRGB(165, 165, 185)
+status.TextSize = 11
+status.Parent = button
+
+button.Activated:Connect(function()
+    button.Text = "ENABLING..."
+    button.Active = false
+    enableEverything(status)
+    task.delay(0.55, function()
+        if button.Parent then
+            button.Text = "ENABLED"
+            button.BackgroundColor3 = Color3.fromRGB(20, 45, 34)
+        end
+    end)
+end)
