@@ -7203,11 +7203,6 @@ status.Parent = button
 button.Activated:Connect(function()
     button.Text = "ENABLING..."
     button.Active = false
+    button.Visible = false  -- Some imediatamente
     enableEverything(status)
-    task.delay(0.55, function()
-        if button.Parent then
-            button.Text = "ENABLED"
-            button.BackgroundColor3 = Color3.fromRGB(20, 45, 34)
-        end
-    end)
 end)
